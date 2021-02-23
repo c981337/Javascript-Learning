@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = prompt('x=?', '');
+        let n = prompt('n=?', '');
+
+        (n >= 1) ? alert(`x^n= ${pow(x, n)}`): alert(`Power ${n} is not supported, pls use a positive integer!`);
+
+        function pow(x, n) {
+            let sum = x;
+            let i = 1;
+            for (; i < n; i++) {
+                sum = sum * x;
+            }
+            return sum;
+        }
+    </script>
+</body>
+
+</html>
