@@ -11,8 +11,22 @@
 <body>
     <script>
         function sumInput() {
+            let n = [];
+            let i = 0;
+            let sum = 0;
+            while (1) {
+                n[i] = +prompt('A number please?', '0');
+                if (n[i] == '' || n[i] == '' || typeof n[i] != 'number') break;
+                i++
+            }
 
+            for (j = 0; j <= i; j++) {
+                sum += n[j];
+            }
+            return sum;
         }
+
+        alert(sumInput());
     </script>
 </body>
 
