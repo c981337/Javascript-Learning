@@ -10,9 +10,13 @@
 
 <body>
     <script>
-        let lengths = ['Bilbo', 'Gandalf', 'Nazgul'].map(item => item.length);
+        let names = 'Bilbo,Gandalf,Nazgul';
 
-        alert(lengths);
+        let arr = names.split(',');
+
+        for (let name of arr) {
+            alert(`A message to ${name}.`);
+        }
     </script>
 </body>
 
