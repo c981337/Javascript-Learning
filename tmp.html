@@ -10,28 +10,20 @@
 
 <body>
     <script>
-        function compare(a, b) {
-            if (a > b) {
-                console.log(`a= ${a}, b= ${b}`);
-                return 1;
-            }
-            if (a == b) {
-                console.log(`a= ${a}, b= ${b}`);
-                return 0;
-            }
-            if (a < b) {
-                console.log(`a= ${a}, b= ${b}`);
-                return -1;
-            }
+        function findNextSquare(sq) {
+            // Return the next square if sq is a perfect square, -1 otherwise
+            if (Number.isInteger(Math.pow(sq, 0.5)) == true) return Math.pow(Math.pow(sq, 0.5) + 1, 2);
+            return -1;
         }
 
+        //console.log(Number.isInteger(Math.pow(121, 0.5)));
 
-        let arr = [1, 9, 16, 4];
-
-        console.log(arr);
-        arr = arr.sort((a, b) => a - b);
-
-        console.log(arr);
+        console.log(findNextSquare(121));
+        console.log(findNextSquare(625));
+        console.log(findNextSquare(319225));
+        console.log(findNextSquare(15241383936));
+        console.log(findNextSquare(155));
+        console.log(findNextSquare(342786627));
     </script>
 </body>
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let john = {
+            name: "John"
+        };
+        let pete = {
+            name: "Pete"
+        };
+        let mary = {
+            name: "Mary"
+        };
+
+        let set = new Set();
+
+        set.add(john);
+        set.add(pete);
+        set.add(mary);
+        set.add(john);
+        set.add(mary);
+
+        console.log(set.size);
+        console.log(set.keys(john));
+        console.log(set.values());
+        console.log(set.entries());
+
+        for (let value of set) {
+            console.log(value);
+        }
+
+        set.forEach((value, value2, set) => console.log(value));
+    </script>
+</body>
+
+</html>
