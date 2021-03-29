@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Given an array of integers your solution should find the smallest integer.
+
+    For example:
+
+    Given [34, 15, 88, 2] your solution will return 2
+    Given [34, -345, -1, 100] your solution will return -345
+    You can assume, for the purpose of this kata, that the supplied array will not be empty. -->
+    <script>
+        class SmallestIntegerFinder {
+            findSmallestInt(args) {
+                let smallestNum = args.sort((a, b) => a - b);
+                console.log(+smallestNum[0]);
+                return +smallestNum[0];
+            }
+        }
+        var sif = new SmallestIntegerFinder();
+        sif.findSmallestInt([34, 15, 88, 2]);
+        sif.findSmallestInt([34, -345, -1, 100]);
+        sif.findSmallestInt([78, 56, 232, 12, 8]);
+        sif.findSmallestInt([78, 56, 232, 12, 18]);
+        sif.findSmallestInt([78, 56, 232, 412, 228]);
+        sif.findSmallestInt([78, 56, 232, 12, 0]);
+        sif.findSmallestInt([1, 56, 232, 12, 8]);
+    </script>
+</body>
+
+</html>
