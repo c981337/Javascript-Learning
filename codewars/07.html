@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that
+    determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore
+    letter case.
+
+    isIsogram("Dermatoglyphics") == true
+    isIsogram("aba") == false
+    isIsogram("moOse") == false // -- ignore letter case 
+    -->
+    <script>
+        function isIsogram(str) {
+            let lowArr = str.toLowerCase().split('');
+            for (i = 0; i <= str.length; i++) {
+                if (lowArr.includes(lowArr[i], i + 1) == true) return false;
+                if (i == str.length) return true;
+            }
+        }
+
+        isIsogram("Dermatoglyphics");
+        isIsogram("isogram");
+        isIsogram("aba");
+        isIsogram("moOse");
+        isIsogram("isIsogram");
+        isIsogram("");
+    </script>
+</body>
+
+</html>
