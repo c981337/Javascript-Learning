@@ -35,16 +35,25 @@
     -->
     <script>
         function longestConsec(strarr, k) {
-            let concatStr = [];
+            let resultArr = [];
+
+            if (strarr == '' || k < 1 || k > strarr.length) return '';
             for (i = 0; i < strarr.length - k + 1; i++) {
-                concatStr[i] = strarr[i] + strarr[i + 1];
+                resultArr.push(strarr[i]);
+                for (j = 0; j < k - 1; j++) {
+                    resultArr[i] += strarr[i + j + 1];
+                }
             }
-            console.log(concatStr);
+            // console.log(resultArr);
+            let arrLength = resultArr.map(x => x.length);
+            // console.log(arrLength);
+            return resultArr.find(x => x.length == Math.max(...arrLength));
         }
 
         console.log(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2));
         // console.log(longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb",
-        //     "oocccffuucccjjjkkkjyyyeehh"], 1));
+        //     "oocccffuucccjjjkkkjyyyeehh"
+        // ], 1));
         // console.log(longestConsec([], 3));
         // console.log(longestConsec(["itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv",
         //     "vweqilsfytihvrzlaodfixoyxvyuyvgpck"
