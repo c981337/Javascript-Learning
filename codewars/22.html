@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    Given a variable n,
+
+    If n is an integer, Return a string with dash'-'marks before and after each odd integer, but do not begin or end the
+    string with a dash mark. If n is negative, then the negative sign should be removed.
+
+    If n is not an integer, return an empty value.
+
+    Ex:
+
+    dashatize(274) -> '2-7-4';
+    dashatize(5311) -> "5-3-1-1"
+    dashatize(86320) -> "86-3-20"
+    dashatize(974302) -> "9-7-4-3-02"
+    dashatize(NaN) -> "NaN"
+    dashatize(0) -> "0"
+    dashatize(-1) -> "1"
+    dashatize(-28369) -> "28-3-6-9"
+    -->
+    <script>
+        function dashatize(num) {
+            if (num == 0) return 0;
+            if (isNaN(num)) return NaN;
+            if (num < 0) num = -num;
+
+            let numSplit = num.toString().split('');
+            for (i = 0; i < numSplit.length; i++) {
+                if (numSplit[i] % 2 == 0 && numSplit[i + 1] % 2 == 0) {
+                    numSplit[i] += numSplit[i + 1];
+                    numSplit.splice(i + 1, 1);
+                    i--;
+                }
+            }
+            // console.log(numSplit);
+            return numSplit.join('-');
+        }
+        console.log(dashatize(8480), "Should return 8480");
+        // console.log(dashatize(274), "Should return 2-7-4");
+        // console.log(dashatize(5311), "Should return 5-3-1-1");
+        // console.log(dashatize(86320), "Should return 86-3-20");
+        // console.log(dashatize(974302), "Should return 9-7-4-3-02");
+        // console.log(dashatize(NaN), "Should return NaN");
+        // console.log(dashatize(0), "Should return 0");
+        // console.log(dashatize(-1), "Should return 1");
+        // console.log(dashatize(-28369), "Should return 28-3-6-9");
+    </script>
+</body>
+
+</html>
