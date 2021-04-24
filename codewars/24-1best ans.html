@@ -40,45 +40,24 @@
     if you want to translate, please ask before translating. -->
     <script>
         function dirReduc(arr) {
-            let finalPosition = [];
+            let opposite = {
+                'NORTH': 'SOUTH',
+                'EAST': 'WEST',
+                'SOUTH': 'NORTH',
+                'WEST': 'EAST'
+            };
+            return arr.reduce((reducer, value) => {
+                if (reducer[reducer.length - 1] == opposite[value]) reducer.pop();
+                else reducer.push(value);
+                return reducer;
+            }, []);
 
-            for (i = 0; i < arr.length; i++) {
-
-                if (finalPosition.length == 0) {
-                    finalPosition.push(arr[i]);
-                    continue;
-                }
-                switch (finalPosition[finalPosition.length - 1]) {
-                    case 'NORTH':
-                        if (arr[i] == 'SOUTH') finalPosition.pop();
-                        else finalPosition.push(arr[i]);
-                        // console.log('nnn');
-                        break;
-                    case 'SOUTH':
-                        if (arr[i] == 'NORTH') finalPosition.pop();
-                        else finalPosition.push(arr[i]);
-                        // console.log('sss');
-                        break;
-                    case 'EAST':
-                        if (arr[i] == 'WEST') finalPosition.pop();
-                        else finalPosition.push(arr[i]);
-                        // console.log('eee');
-                        break;
-                    case 'WEST':
-                        if (arr[i] == 'EAST') finalPosition.pop();
-                        else finalPosition.push(arr[i]);
-                        // console.log('www');
-                        break;
-                }
-
-            }
-            return finalPosition;
         }
 
 
         console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]));
-        console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
-        console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
+        // console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+        // console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
     </script>
 </body>
 
