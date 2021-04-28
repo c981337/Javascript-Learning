@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    You have to extract a portion of the file name as follows:
+
+    Assume it will start with date represented as long number
+    Followed by an underscore
+    You'll have then a filename with an extension
+    it will always have an extra extension at the end
+    
+    Inputs:
+    1231231223123131_FILE_NAME.EXTENSION.OTHEREXTENSION
+
+    1_This_is_an_otherExample.mpg.OTHEREXTENSIONadasdassdassds34
+
+    1231231223123131_myFile.tar.gz2
+    
+    Outputs
+    FILE_NAME.EXTENSION
+
+    This_is_an_otherExample.mpg
+
+    myFile.tar 
+    -->
+    <script>
+        class FileNameExtractor {
+            static extractFileName(dirtyFileName) {
+                // let fileName = dirtyFileName.split('.');
+                // fileName.pop();
+                // fileName = fileName.join('.').split('_');
+                return dirtyFileName.split('.').slice(0, -1).join('.').split('_').slice(1).join('_')
+            }
+        }
+
+        console.log(FileNameExtractor.extractFileName("1_FILE_NAME.EXTENSION.OTHEREXTENSIONadasdassdassds34"),
+            "FILE_NAME.EXTENSION");
+        // console.log(FileNameExtractor.extractFileName("1231231223123131_FILE_NAME.EXTENSION.OTHEREXTENSION"),
+        //     "FILE_NAME.EXTENSION");
+    </script>
+</body>
+
+</html>
